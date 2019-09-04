@@ -1,0 +1,3 @@
+build/*.js
+clients/nodejs/*_protoc.js
+clients/nodejs/*_pbjs.js

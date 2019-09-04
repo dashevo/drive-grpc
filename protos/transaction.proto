@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package org.dash.platform.drive;
+
+service Transaction {
+  rpc startTransaction (StartTransactionRequest) returns (StartTransactionResponse);
+  rpc applyStateTransition (ApplyStateTransitionRequest) returns (ApplyStateTransitionResponse);
+  rpc commitTransaction (CommitTransactionRequest) returns (CommitTransactionResponse);
+}
+
+message StartTransactionRequest {}
+
+message StartTransactionResponse {}
+
+message ApplyStateTransitionRequest {
+  bytes state_transition = 1;
+  uint32 block_height = 2;
+}
+
+message ApplyStateTransitionResponse {}
+
+message CommitTransactionRequest {}
+
+message CommitTransactionResponse {}

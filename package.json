@@ -1,0 +1,27 @@
+{
+  "name": "drive-grpc",
+  "version": "0.1.0",
+  "description": "Drive GRPC definition files and generated clients",
+  "main": "index.js",
+  "scripts": {
+    "build": "scripts/build.sh",
+    "lint": "eslint .",
+    "check-package": "npm run check-package:name && npm run check-package:version",
+    "check-package:name": "test $(jq -r .name package.json) = $(jq -r .name package-lock.json)",
+    "check-package:version": "test $(jq -r .version package.json) = $(jq -r .version package-lock.json)",
+    "prepublishOnly": "npm run build"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@grpc/proto-loader": "^0.5.2",
+    "google-protobuf": "^3.9.1",
+    "grpc": "^1.23.3",
+    "lodash.snakecase": "^4.1.1",
+    "protobufjs": "^6.8.8"
+  },
+  "devDependencies": {
+    "eslint": "^6.3.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2"
+  }
+}
