@@ -1,4 +1,4 @@
-# DRIVE GRPC
+# Drive GRPC
 
 [![Build Status](https://travis-ci.com/dashevo/drive-grpc.svg?branch=master)](https://travis-ci.com/dashevo/drive-grpc)
 [![NPM version](https://img.shields.io/npm/v/@dashevo/drive-grpc.svg)](https://npmjs.org/package/@dashevo/drive-grpc)
@@ -40,4 +40,3 @@ Feel free to dive in! [Open an issue](https://github.com/dashevo/drive-grpc/issu
 ## License
 
 [MIT](LICENSE) &copy; Dash Core Group, Inc.
-
