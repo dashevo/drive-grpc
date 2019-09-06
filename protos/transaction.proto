@@ -8,7 +8,9 @@ service Transaction {
   rpc commitTransaction (CommitTransactionRequest) returns (CommitTransactionResponse);
 }
 
-message StartTransactionRequest {}
+message StartTransactionRequest {
+  uint32 block_height = 1;
+}
 
 message StartTransactionResponse {}
 
@@ -19,6 +21,8 @@ message ApplyStateTransitionRequest {
 
 message ApplyStateTransitionResponse {}
 
-message CommitTransactionRequest {}
+message CommitTransactionRequest {
+  uint32 block_height = 1;
+}
 
 message CommitTransactionResponse {}
