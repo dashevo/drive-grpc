@@ -18,7 +18,7 @@ function loadPackageDefinition(serviceName) {
 
   const packageDefinition = grpc.loadPackageDefinition(definition);
 
-  return packageDefinition.org.dash.platform.dapi;
+  return packageDefinition;
 }
 
 module.exports = loadPackageDefinition;

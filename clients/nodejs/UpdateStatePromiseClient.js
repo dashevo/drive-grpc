@@ -17,12 +17,14 @@ const {
     dash: {
       platform: {
         drive: {
-          StartTransactionRequest: PBJSStartTransactionRequest,
-          StartTransactionResponse: PBJSStartTransactionResponse,
-          ApplyStateTransitionRequest: PBJSApplyStateTransitionRequest,
-          ApplyStateTransitionResponse: PBJSApplyStateTransitionResponse,
-          CommitTransactionRequest: PBJSCommitTransactionRequest,
-          CommitTransactionResponse: PBJSCommitTransactionResponse,
+          v1: {
+            StartTransactionRequest: PBJSStartTransactionRequest,
+            StartTransactionResponse: PBJSStartTransactionResponse,
+            ApplyStateTransitionRequest: PBJSApplyStateTransitionRequest,
+            ApplyStateTransitionResponse: PBJSApplyStateTransitionResponse,
+            CommitTransactionRequest: PBJSCommitTransactionRequest,
+            CommitTransactionResponse: PBJSCommitTransactionResponse,
+          },
         },
       },
     },
@@ -36,7 +38,17 @@ const {
 } = require('./update_state_protoc');
 
 const {
-  UpdateState: UpdateStateNodeJSClient,
+  org: {
+    dash: {
+      platform: {
+        drive: {
+          v1: {
+            UpdateState: UpdateStateNodeJSClient,
+          },
+        },
+      },
+    },
+  },
 } = loadPackageDefinition('UpdateState');
 
 const startTransactionOptions = {

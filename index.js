@@ -6,7 +6,9 @@ const {
   org: {
     dash: {
       platform: {
-        drive: pbjsUpdateStateMessages,
+        drive: {
+          v1: pbjsUpdateStateMessages,
+        },
       },
     },
   },
