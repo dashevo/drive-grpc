@@ -1,30 +1,30 @@
-const TransactionPromiseClient = require('./clients/nodejs/TransactionPromiseClient');
+const UpdateStatePromiseClient = require('./clients/nodejs/UpdateStatePromiseClient');
 
-const protocTransactionMessages = require('./clients/nodejs/transaction_protoc');
+const protocUpdateStateMessages = require('./clients/nodejs/update_state_protoc');
 
 const {
   org: {
     dash: {
       platform: {
-        drive: pbjsTransactionMessages,
+        drive: pbjsUpdateStateMessages,
       },
     },
   },
-} = require('./clients/nodejs/transaction_pbjs');
+} = require('./clients/nodejs/update_state_pbjs');
 
 const loadPackageDefinition = require('./src/loadPackageDefinition');
 const jsonToProtobufFactory = require('./src/converters/jsonToProtobufFactory');
 const protobufToJsonFactory = require('./src/converters/protobufToJsonFactory');
 
 module.exports = {
-  TransactionPromiseClient,
+  UpdateStatePromiseClient,
   utils: {
     loadPackageDefinition,
     jsonToProtobufFactory,
     protobufToJsonFactory,
   },
   pbjs: {
-    ...pbjsTransactionMessages,
+    ...pbjsUpdateStateMessages,
   },
-  ...protocTransactionMessages,
+  ...protocUpdateStateMessages,
 };

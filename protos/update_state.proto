@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package org.dash.platform.drive;
 
-service Transaction {
+service UpdateState {
   rpc startTransaction (StartTransactionRequest) returns (StartTransactionResponse);
   rpc applyStateTransition (ApplyStateTransitionRequest) returns (ApplyStateTransitionResponse);
   rpc commitTransaction (CommitTransactionRequest) returns (CommitTransactionResponse);

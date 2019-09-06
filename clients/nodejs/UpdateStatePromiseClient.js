@@ -27,17 +27,17 @@ const {
       },
     },
   },
-} = require('./transaction_pbjs');
+} = require('./update_state_pbjs');
 
 const {
   StartTransactionResponse: ProtocStartTransactionResponse,
   ApplyStateTransitionResponse: ProtocApplyStateTransitionResponse,
   CommitTransactionResponse: ProtocCommitTransactionResponse,
-} = require('./transaction_protoc');
+} = require('./update_state_protoc');
 
 const {
-  Transaction: TransactionNodeJSClient,
-} = loadPackageDefinition('Transaction');
+  UpdateState: UpdateStateNodeJSClient,
+} = loadPackageDefinition('UpdateState');
 
 const startTransactionOptions = {
   interceptors: [
@@ -81,14 +81,14 @@ const commitTransactionOptions = {
   ],
 };
 
-class TransactionPromiseClient {
+class UpdateStatePromiseClient {
   /**
    * @param {string} hostname
    * @param {?Object} credentials
    * @param {?Object} options
    */
   constructor(hostname, credentials = grpc.credentials.createInsecure(), options = {}) {
-    this.client = new TransactionNodeJSClient(hostname, credentials, options);
+    this.client = new UpdateStateNodeJSClient(hostname, credentials, options);
 
     this.client.startTransaction = promisify(
       this.client.startTransaction.bind(this.client),
@@ -155,4 +155,4 @@ class TransactionPromiseClient {
   }
 }
 
-module.exports = TransactionPromiseClient;
+module.exports = UpdateStatePromiseClient;
