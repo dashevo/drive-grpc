@@ -1,5 +1,5 @@
 {
-  "name": "drive-grpc",
+  "name": "@dashevo/drive-grpc",
   "version": "0.1.0",
   "description": "Drive GRPC definition files and generated clients",
   "main": "index.js",
