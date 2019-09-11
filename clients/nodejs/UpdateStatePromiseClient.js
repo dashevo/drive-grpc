@@ -41,16 +41,8 @@ const {
 } = require('./update_state_protoc');
 
 const {
-  org: {
-    dash: {
-      platform: {
-        drive: {
-          v1: {
-            UpdateState: UpdateStateNodeJSClient,
-          },
-        },
-      },
-    },
+  v1: {
+    UpdateState: UpdateStateNodeJSClient,
   },
 } = loadPackageDefinition('UpdateState');
 
