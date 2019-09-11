@@ -18,7 +18,7 @@ function loadPackageDefinition(serviceName) {
 
   const packageDefinition = grpc.loadPackageDefinition(definition);
 
-  return packageDefinition;
+  return packageDefinition.org.dash.platform.drive;
 }
 
 module.exports = loadPackageDefinition;
