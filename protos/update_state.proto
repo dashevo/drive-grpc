@@ -15,8 +15,10 @@ message StartTransactionRequest {
 message StartTransactionResponse {}
 
 message ApplyStateTransitionRequest {
-  bytes state_transition = 1;
-  uint32 block_height = 2;
+  bytes state_transition_header = 1;
+  bytes state_transition_packet = 2;
+  uint32 block_height = 3;
+  bytes block_hash = 4;
 }
 
 message ApplyStateTransitionResponse {}
