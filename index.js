@@ -7,7 +7,7 @@ const {
     dash: {
       platform: {
         drive: {
-          v1: pbjsUpdateStateMessages,
+          v0: pbjsUpdateStateMessages,
         },
       },
     },

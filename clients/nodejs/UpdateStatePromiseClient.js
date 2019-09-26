@@ -20,7 +20,7 @@ const {
     dash: {
       platform: {
         drive: {
-          v1: {
+          v0: {
             StartTransactionRequest: PBJSStartTransactionRequest,
             StartTransactionResponse: PBJSStartTransactionResponse,
             ApplyStateTransitionRequest: PBJSApplyStateTransitionRequest,
@@ -41,7 +41,7 @@ const {
 } = require('./update_state_protoc');
 
 const {
-  v1: {
+  v0: {
     UpdateState: UpdateStateNodeJSClient,
   },
 } = loadPackageDefinition('UpdateState');

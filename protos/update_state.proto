@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package org.dash.platform.drive.v1;
+package org.dash.platform.drive.v0;
 
 service UpdateState {
   rpc startTransaction (StartTransactionRequest) returns (StartTransactionResponse);
