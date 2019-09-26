@@ -15,18 +15,18 @@
 ## Install
 
 ```sh
-npm install @dashevo/dapi-grpc
+npm install @dashevo/drive-grpc
 ```
 
 ## Usage
 
 ```js
 import {
-  TransactionsPromiseClient,
+  UpdateStatePromiseClient,
   StartTransactionRequest,
 } from '@dashevo/drive-grpc';
 
-const client = new TransactionPromiseClient('http://localhost:8080');
+const client = new UpdateStatePromiseClient('http://localhost:8080');
 
 const request = new StartTransactionRequest();
 
