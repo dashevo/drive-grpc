@@ -21,7 +21,16 @@ npm install @dashevo/drive-grpc
 ## Usage
 
 ```js
-// TODO
+import {
+  UpdateStatePromiseClient,
+  StartTransactionRequest,
+} from '@dashevo/drive-grpc';
+
+const client = new UpdateStatePromiseClient('http://localhost:8080');
+
+const request = new StartTransactionRequest();
+
+await client.startTransaction(request);
 ```
 
 ## Contributing
