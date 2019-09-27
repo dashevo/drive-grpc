@@ -25,6 +25,7 @@ message ApplyStateTransitionResponse {}
 
 message CommitTransactionRequest {
   uint32 block_height = 1;
+  bytes block_hash = 2;
 }
 
 message CommitTransactionResponse {}
