@@ -5,9 +5,6 @@ const loadPackageDefinition = require('../../src/loadPackageDefinition');
 
 const isObject = require('../../src/isObject');
 const convertObjectToMetadata = require('../../src/convertObjectToMetadata');
-const metadataToObjectInterceptorFacory = require(
-  '../../src/interceptors/client/metadataToObjectInterceptorFactory',
-);
 
 const jsonToProtobufInterceptorFactory = require(
   '../../src/interceptors/client/jsonToProtobufInterceptorFactory',
@@ -48,9 +45,6 @@ const {
 
 const startTransactionOptions = {
   interceptors: [
-    metadataToObjectInterceptorFacory(
-      isObject, convertObjectToMetadata,
-    ),
     jsonToProtobufInterceptorFactory(
       jsonToProtobufFactory(
         ProtocStartTransactionResponse,
@@ -65,9 +59,6 @@ const startTransactionOptions = {
 
 const applyStateTransitionOptions = {
   interceptors: [
-    metadataToObjectInterceptorFacory(
-      isObject, convertObjectToMetadata,
-    ),
     jsonToProtobufInterceptorFactory(
       jsonToProtobufFactory(
         ProtocApplyStateTransitionResponse,
@@ -82,9 +73,6 @@ const applyStateTransitionOptions = {
 
 const commitTransactionOptions = {
   interceptors: [
-    metadataToObjectInterceptorFacory(
-      isObject, convertObjectToMetadata,
-    ),
     jsonToProtobufInterceptorFactory(
       jsonToProtobufFactory(
         ProtocCommitTransactionResponse,
@@ -125,9 +113,13 @@ class UpdateStatePromiseClient {
    * @return {Promise<!StartTransactionResponse>}
    */
   startTransaction(startTransactionRequest, metadata = {}) {
+    if (!isObject(metadata)) {
+      throw new Error('metadata must be an object');
+    }
+
     return this.client.startTransaction(
       startTransactionRequest,
-      metadata,
+      convertObjectToMetadata(metadata),
       startTransactionOptions,
     );
   }
@@ -138,9 +130,13 @@ class UpdateStatePromiseClient {
    * @return {Promise<!ApplyStateTransitionResponse>}
    */
   applyStateTransition(applyStateTransitionRequest, metadata = {}) {
+    if (!isObject(metadata)) {
+      throw new Error('metadata must be an object');
+    }
+
     return this.client.applyStateTransition(
       applyStateTransitionRequest,
-      metadata,
+      convertObjectToMetadata(metadata),
       applyStateTransitionOptions,
     );
   }
@@ -151,9 +147,13 @@ class UpdateStatePromiseClient {
    * @return {Promise<!CommitTransactionResponse>}
    */
   commitTransaction(commitTransactionRequest, metadata = {}) {
+    if (!isObject(metadata)) {
+      throw new Error('metadata must be an object');
+    }
+
     return this.client.commitTransaction(
       commitTransactionRequest,
-      metadata,
+      convertObjectToMetadata(metadata),
       commitTransactionOptions,
     );
   }
