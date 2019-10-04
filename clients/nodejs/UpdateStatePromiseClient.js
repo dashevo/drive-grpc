@@ -1,3 +1,4 @@
+const path = require('path');
 const grpc = require('grpc');
 const { promisify } = require('util');
 
@@ -41,11 +42,11 @@ const {
   CommitTransactionResponse: ProtocCommitTransactionResponse,
 } = require('./update_state_protoc');
 
+const protoPath = path.join(__dirname, '../protos/update_state.proto');
+
 const {
-  v0: {
-    UpdateState: UpdateStateNodeJSClient,
-  },
-} = loadPackageDefinition('UpdateState');
+  UpdateState: UpdateStateNodeJSClient,
+} = loadPackageDefinition(protoPath, 'drive', 'v0');
 
 const startTransactionOptions = {
   interceptors: [
