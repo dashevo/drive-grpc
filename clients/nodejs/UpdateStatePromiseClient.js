@@ -1,16 +1,20 @@
 const grpc = require('grpc');
 const { promisify } = require('util');
 
-const loadPackageDefinition = require('../../src/loadPackageDefinition');
-
-const isObject = require('../../src/isObject');
-const convertObjectToMetadata = require('../../src/convertObjectToMetadata');
-
-const jsonToProtobufInterceptorFactory = require(
-  '../../src/interceptors/client/jsonToProtobufInterceptorFactory',
-);
-const jsonToProtobufFactory = require('../../src/converters/jsonToProtobufFactory');
-const protobufToJsonFactory = require('../../src/converters/protobufToJsonFactory');
+const {
+  loadPackageDefinition,
+  isObject,
+  convertObjectToMetadata,
+  client: {
+    interceptors: {
+      jsonToProtobufInterceptorFactory,
+    },
+    converters: {
+      jsonToProtobufFactory,
+      protobufToJsonFactory,
+    },
+  },
+} = require('@dashevo/js-grpc-common');
 
 const {
   org: {
