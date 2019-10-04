@@ -45,8 +45,18 @@ const {
 const protoPath = path.join(__dirname, '../protos/update_state.proto');
 
 const {
-  UpdateState: UpdateStateNodeJSClient,
-} = loadPackageDefinition(protoPath, 'drive', 'v0');
+  org: {
+    dash: {
+      platform: {
+        drive: {
+          v0: {
+            UpdateState: UpdateStateNodeJSClient,
+          },
+        },
+      },
+    },
+  },
+} = loadPackageDefinition(protoPath);
 
 const startTransactionOptions = {
   interceptors: [
