@@ -14,7 +14,7 @@ const {
       protobufToJsonFactory,
     },
   },
-} = require('@dashevo/js-grpc-common');
+} = require('@dashevo/grpc-common');
 
 const {
   org: {
