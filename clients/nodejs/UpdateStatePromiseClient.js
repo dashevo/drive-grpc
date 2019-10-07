@@ -1,16 +1,23 @@
+const path = require('path');
 const grpc = require('grpc');
 const { promisify } = require('util');
 
-const loadPackageDefinition = require('../../src/loadPackageDefinition');
-
-const isObject = require('../../src/isObject');
-const convertObjectToMetadata = require('../../src/convertObjectToMetadata');
-
-const jsonToProtobufInterceptorFactory = require(
-  '../../src/interceptors/client/jsonToProtobufInterceptorFactory',
-);
-const jsonToProtobufFactory = require('../../src/converters/jsonToProtobufFactory');
-const protobufToJsonFactory = require('../../src/converters/protobufToJsonFactory');
+const {
+  loadPackageDefinition,
+  utils: {
+    isObject,
+    convertObjectToMetadata,
+  },
+  client: {
+    interceptors: {
+      jsonToProtobufInterceptorFactory,
+    },
+    converters: {
+      jsonToProtobufFactory,
+      protobufToJsonFactory,
+    },
+  },
+} = require('@dashevo/grpc-common');
 
 const {
   org: {
@@ -37,11 +44,11 @@ const {
   CommitTransactionResponse: ProtocCommitTransactionResponse,
 } = require('./update_state_protoc');
 
+const protoPath = path.join(__dirname, '../protos/update_state.proto');
+
 const {
-  v0: {
-    UpdateState: UpdateStateNodeJSClient,
-  },
-} = loadPackageDefinition('UpdateState');
+  UpdateState: UpdateStateNodeJSClient,
+} = loadPackageDefinition(protoPath, 'org.dash.platform.drive.v0');
 
 const startTransactionOptions = {
   interceptors: [
