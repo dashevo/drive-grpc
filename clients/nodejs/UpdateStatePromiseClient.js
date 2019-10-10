@@ -44,7 +44,7 @@ const {
   CommitTransactionResponse: ProtocCommitTransactionResponse,
 } = require('./update_state_protoc');
 
-const protoPath = path.join(__dirname, '../protos/update_state.proto');
+const protoPath = path.join(__dirname, '../../protos/update_state.proto');
 
 const {
   UpdateState: UpdateStateNodeJSClient,
