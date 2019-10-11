@@ -4,9 +4,9 @@ const { promisify } = require('util');
 
 const {
   loadPackageDefinition,
+  convertObjectToMetadata,
   utils: {
     isObject,
-    convertObjectToMetadata,
   },
   client: {
     interceptors: {
@@ -44,7 +44,7 @@ const {
   CommitTransactionResponse: ProtocCommitTransactionResponse,
 } = require('./update_state_protoc');
 
-const protoPath = path.join(__dirname, '../protos/update_state.proto');
+const protoPath = path.join(__dirname, '../../protos/update_state.proto');
 
 const {
   UpdateState: UpdateStateNodeJSClient,
