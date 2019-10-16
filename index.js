@@ -2,6 +2,8 @@ const UpdateStatePromiseClient = require('./clients/nodejs/UpdateStatePromiseCli
 
 const protocUpdateStateMessages = require('./clients/nodejs/update_state_protoc');
 
+const getUpdateStateDefinition = require('./lib/getUpdateStateDefinition');
+
 const {
   org: {
     dash: {
@@ -16,6 +18,7 @@ const {
 
 module.exports = {
   UpdateStatePromiseClient,
+  getUpdateStateDefinition,
   pbjs: {
     ...pbjsUpdateStateMessages,
   },
