@@ -1,6 +1,6 @@
 {
   "name": "@dashevo/drive-grpc",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Drive GRPC definition files and generated clients",
   "main": "index.js",
   "scripts": {
