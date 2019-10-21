@@ -6,3 +6,6 @@
 
 # Build folder
 /build
+
+# NYC output
+.nyc_output
