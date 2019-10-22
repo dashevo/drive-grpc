@@ -29,6 +29,7 @@ before_script: npm run build
 script:
   - npm run lint
   - npm run check-package
+  - npm run test
 
 deploy:
   provider: script
